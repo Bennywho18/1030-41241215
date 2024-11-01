@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FullPage.js 範例</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" rel="stylesheet" />
+    <style>
+         body {
+            padding-top: 20px; /* 為了給導航欄留出空間 */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 將內容置中 */
+        }
+        .navbar {
+            margin-bottom: 20px; /* 導航欄底部間距 */
+        }
+
+        .section {
+            text-align: center;
+            font-size: 3em;
+            color: white;
+        }
+
+        .section1 {
+            background: #ff5733;
+        }
+
+        .section2 {
+            background: #33c1ff;
+        }
+
+        .section3 {
+            background: #75ff33;
+        }
+
+        .section4 {
+            background: #ff33a1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar 位置 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid justify-content-center"> <!-- 置中導航欄內容 -->
+            <a class="navbar-brand" href="index.html">JS 套件介紹</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="aos.html">AOS 動畫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="text-to-speech.html">文字轉語音</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lottie.html">Lottie 動畫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chart.html">Chart.js 圖表</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lazy-loading.html">Lazy-loading 懶加載</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fullpage.html">FullPage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Lightbox2.html">Lightbox2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime.html">Anime</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FullCalendar.html">FullCalendar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vanilla.html">Vanilla</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <h2>Fullpage 動畫效果</h2>
+        <p><a href="https://alvarotrigo.com/fullPage/#page1" target="_blank">FullPage 官網</a></p>
+
+        <h3>範例程式碼</h3>
+        <pre><code>
+&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" rel="stylesheet" /&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"&gt;&lt;/script&gt;
+
+&lt;div id="fullpage"&gt;
+    &lt;div class="section section1"&gt;第一部分&lt;/div&gt;
+    &lt;div class="section section2"&gt;第二部分&lt;/div&gt;
+    &lt;div class="section section3"&gt;第三部分&lt;/div&gt;
+    &lt;div class="section section4"&gt;第四部分&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    new fullpage('#fullpage', {
+        autoScrolling: true,
+        navigation: true,
+        scrollingSpeed: 700,
+    });
+&lt;/script&gt;
+        </code></pre>
+
+        <h2>範例展示效果</h2>
+        <div id="fullpage">
+            <div class="section section1">第一部分</div>
+            <div class="section section2">第二部分</div>
+            <div class="section section3">第三部分</div>
+            <div class="section section4">第四部分</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <script>
+        new fullpage('#fullpage', {
+            autoScrolling: true,
+            navigation: true,
+            scrollingSpeed: 700,
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

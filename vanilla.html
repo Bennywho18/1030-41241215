@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla 動畫效果示範</title>
+    <style>
+        body {
+            padding-top: 10px; /* 為了給導航欄留出空間 */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 將內容置中 */
+        }
+
+        .navbar {
+            margin-bottom: 20px; /* 導航欄底部間距 */
+        }
+
+        .tilt-box {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            border-radius: 10px;
+            transition: transform 0.2s; /* 平滑過渡效果 */
+            perspective: 1000px; /* 為了實現3D效果 */
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar 位置 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid justify-content-center"> <!-- 置中導航欄內容 -->
+            <a class="navbar-brand" href="index.html">JS 套件介紹</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="aos.html">AOS 動畫</a></li>
+                    <li class="nav-item"><a class="nav-link" href="text-to-speech.html">文字轉語音</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lottie.html">Lottie 動畫</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chart.html">Chart.js 圖表</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lazy-loading.html">Lazy-loading 懶加載</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fullpage.html">FullPage</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lightbox2.html">Lightbox2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="anime.html">Anime</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fullcalendar.html">FullCalendar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vanilla.html">Vanilla</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <h2>Vanilla 動畫效果</h2>
+        <p><a href="https://micku7zu.github.io/vanilla-tilt.js/" target="_blank">Vanilla 官網</a></p>
+
+        <h3>範例程式碼</h3>
+        <pre><code>
+            &lt;script&gt;
+                const tiltBox = document.getElementById('tiltBox');
+            
+                tiltBox.addEventListener('mousemove', (e) =&gt; {
+                    const { offsetWidth, offsetHeight } = tiltBox;
+                    const { clientX, clientY } = e;
+                    const x = (clientX / offsetWidth) - 0.5;
+                    const y = (clientY / offsetHeight) - 0.5;
+            
+                    const tiltX = (y * 10).toFixed(2); // 最大傾斜角度
+                    const tiltY = (x * -10).toFixed(2); // 最大傾斜角度
+            
+                    tiltBox.style.transform = `perspective(500px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+                });
+            
+                tiltBox.addEventListener('mouseleave', () =&gt; {
+                    tiltBox.style.transform = 'perspective(500px) rotateX(0deg) rotateY(0deg)';
+                });
+            &lt;/script&gt;
+                    </code></pre>
+                <h3>範例展示效果</h3>
+        <div class="tilt-box" id="tiltBox">Tilt Me!</div>
+    </div>
+
+    <script>
+        const tiltBox = document.getElementById('tiltBox');
+
+        tiltBox.addEventListener('mousemove', (e) => {
+            const { offsetWidth, offsetHeight } = tiltBox;
+            const { clientX, clientY } = e;
+            const x = (clientX / offsetWidth) - 0.5;
+            const y = (clientY / offsetHeight) - 0.5;
+
+            const tiltX = (y * 10).toFixed(2); // 最大傾斜角度
+            const tiltY = (x * -10).toFixed(2); // 最大傾斜角度
+
+            tiltBox.style.transform = `perspective(500px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+        });
+
+        tiltBox.addEventListener('mouseleave', () => {
+            tiltBox.style.transform = 'perspective(500px) rotateX(0deg) rotateY(0deg)';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+https://resources.simular.co/type/effects-tools.html
+
+另外五個js外掛
+1.https://alvarotrigo.com/fullPage/#page1
+2.https://wicky.nillia.ms/headroom.js/
+3.https://alvarotrigo.com/multiScroll/#first
+4.https://matthew.wagerfield.com/parallax/
+5.https://micku7zu.github.io/vanilla-tilt.js/
